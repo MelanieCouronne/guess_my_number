@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Guess My Number</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="app">
+    <header class="app__header">
+      <h1 class="app__title">Guess My Number!</h1>
+      <p class="app__range">( Between 1 and 20 )</p>
+
+      <button class="btn btn--secondary app__btn-again" id="btn-again">
+        Again!
+      </button>
+
+      <div class="number-box" aria-live="polite">?</div>
+    </header>
+
+    <main class="app__main">
+      <section class="panel panel--left">
+        <label for="guess-input" class="sr-only">Your Guess</label>
+        <input
+          id="guess-input"
+          type="number"
+          class="input input--guess guess"
+          min="1"
+          max="20"
+          aria-label="Guess a number"
+        />
+
+        <button class="btn btn--primary check">Check!</button>
+      </section>
+
+      <section class="panel panel--right">
+        <p class="message" aria-live="polite">Start guessing...</p>
+
+        <p class="stat">💯 Score: <span class="score">5</span></p>
+
+        <p class="stat">🥇 Highscore: <span class="highscore">0</span></p>
+      </section>
+    </main>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>

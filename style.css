@@ -1,0 +1,215 @@
+/* ╔══════════════════════════════════════════════════════════╗
+   ║                       STYLE EN BEM                       ║
+   ╚══════════════════════════════════════════════════════════╝ */
+
+/* ------------------------------ */
+/*         Reset + variables       */
+/* ------------------------------ */
+
+:root {
+  --color-bg: #222;
+  --color-text: #eee;
+  --color-accent: #60b347;
+  --color-danger: #d03d23ff;
+  --color-border: #eee;
+
+  --font-main: "Press Start 2P", sans-serif;
+
+  --transition-fast: 0.25s ease;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+}
+
+/* -------------------------------- */
+/*     Layout structure (BEM)       */
+/* -------------------------------- */
+
+.app__header {
+  position: relative;
+  height: 35vh;
+  border-bottom: 0.7rem solid var(--color-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.app__title {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+.app__range {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 1.4rem;
+  opacity: 0.8;
+}
+
+.app__btn-again {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+
+.number-box {
+  background: var(--color-border);
+  color: #333;
+  font-size: 6rem;
+  width: 15rem;
+  padding: 3rem 0;
+  border-radius: 0.6rem;
+  position: absolute;
+  bottom: -6rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ------- Main layout ------- */
+
+.app__main {
+  height: 65vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+  gap: 4rem;
+}
+
+.panel {
+  width: min(52rem, 90%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.panel--right {
+  font-size: 2rem;
+}
+
+/* ------------------------------ */
+/*     Inputs & buttons           */
+/* ------------------------------ */
+
+.input--guess {
+  background: transparent;
+  border: 0.4rem solid var(--color-border);
+  color: var(--color-text);
+  font-size: 5rem;
+  padding: 2.5rem;
+  width: 25rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  transition: border var(--transition-fast);
+}
+
+.input--guess:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.btn {
+  border: none;
+  padding: 2rem 3rem;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background var(--transition-fast), transform 0.15s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn--primary {
+  background: var(--color-border);
+  color: var(--color-bg);
+}
+
+.btn--primary:hover {
+  background: #ccc;
+}
+
+.btn--secondary {
+  background: var(--color-border);
+  color: var(--color-bg);
+}
+
+.btn--secondary:hover {
+  background: #ccc;
+}
+
+/* ------------------------------ */
+/*     Messages & stats           */
+/* ------------------------------ */
+
+.message {
+  margin-bottom: 8rem;
+  height: 3rem;
+}
+
+.stat {
+  margin-bottom: 2rem;
+}
+
+/* ------------------------------ */
+/*    Accessibilité               */
+/* ------------------------------ */
+
+.sr-only {
+  position: absolute;
+  left: -9999px;
+}
+
+/* ------------------------------ */
+/*     Responsive                 */
+/* ------------------------------ */
+
+@media (max-width: 768px) {
+  .app__title {
+    font-size: 2.8rem;
+  }
+
+  .number-box {
+    font-size: 4.4rem;
+    width: 12rem;
+    padding: 2rem 0;
+  }
+
+  .input--guess {
+    font-size: 3.6rem;
+    width: 20rem;
+  }
+
+  .btn {
+    font-size: 1.6rem;
+    padding: 1.6rem 2.4rem;
+  }
+
+  .app__main {
+    flex-direction: column;
+    height: auto;
+    padding-top: 5rem;
+  }
+}
