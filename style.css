@@ -73,9 +73,9 @@ body {
 .number-box {
   background: var(--color-border);
   color: #333;
-  font-size: 6rem;
+  font-size: 5rem;
   width: 15rem;
-  padding: 3rem 0;
+  padding: 3rem 1rem;
   border-radius: 0.6rem;
   position: absolute;
   bottom: -6rem;
