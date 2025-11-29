@@ -7,7 +7,7 @@ const inputGuess = document.querySelector(".guess");
 const messageEl = document.querySelector(".message");
 const scoreEl = document.querySelector(".score");
 const highScoreEl = document.querySelector(".highscore");
-const numberBox = document.querySelector(".number");
+const numberBox = document.querySelector(".number-box");
 const btnCheck = document.querySelector(".check");
 const btnAgain = document.querySelector("#btn-again");
 
@@ -17,6 +17,12 @@ const setMessage = (msg) => {
 
 const setBackground = (color) => {
   document.body.style.backgroundColor = color;
+};
+
+const updateNumberBox = (value) => {
+  const text = String(value);
+  numberBox.textContent = text;
+  numberBox.dataset.value = text;
 };
 
 const generateSecretNumber = () => {
@@ -36,6 +42,11 @@ const resetGame = () => {
   generateSecretNumber();
 };
 
+const triggerGlitch = () => {
+  numberBox.classList.add("glitch");
+  setTimeout(() => numberBox.classList.remove("glitch"), 200);
+};
+
 const handleCheck = () => {
   if (isWinner || currentScore <= 0) return;
 
@@ -43,6 +54,7 @@ const handleCheck = () => {
 
   if (!guess || guess < 1 || guess > 20) {
     setMessage("⛔ Enter a number between 1 and 20.");
+    triggerGlitch();
     return;
   }
 
@@ -53,16 +65,20 @@ const handleCheck = () => {
     setMessage("💥 You lost the game!");
     setBackground("#d03d23ff");
     btnCheck.disabled = true;
+    triggerGlitch();
     return;
   }
 
   if (guess > secretNumber) {
     setMessage("📈 Too high!");
+    triggerGlitch();
   } else if (guess < secretNumber) {
     setMessage("📉 Too low!");
+    triggerGlitch();
   } else {
     isWinner = true;
     updateWinState(true);
+    numberBox.classList.remove("glitch");
 
     if (currentScore > highScore) {
       highScore = currentScore;
@@ -75,15 +91,15 @@ const updateWinState = (isWin) => {
   if (isWin) {
     setMessage("🎉 Correct Number!");
     setBackground("#60b347");
-    numberBox.textContent = secretNumber;
+    updateNumberBox(secretNumber);
     numberBox.classList.add("win");
     setTimeout(() => {
       numberBox.classList.remove("win");
     }, 600);
   } else {
     setMessage("Start guessing...");
-    numberBox.textContent = "?";
     setBackground("#222");
+    updateNumberBox("?");
   }
 };
 
