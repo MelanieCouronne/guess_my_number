@@ -74,8 +74,12 @@ const handleCheck = () => {
 const updateWinState = (isWin) => {
   if (isWin) {
     setMessage("🎉 Correct Number!");
-    numberBox.textContent = secretNumber;
     setBackground("#60b347");
+    numberBox.textContent = secretNumber;
+    numberBox.classList.add("win");
+    setTimeout(() => {
+      numberBox.classList.remove("win");
+    }, 600);
   } else {
     setMessage("Start guessing...");
     numberBox.textContent = "?";
