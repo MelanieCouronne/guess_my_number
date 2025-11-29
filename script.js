@@ -15,6 +15,10 @@ const setMessage = (msg) => {
   messageEl.textContent = msg;
 };
 
+const setBackground = (color) => {
+  document.body.style.backgroundColor = color;
+};
+
 const generateSecretNumber = () => {
   secretNumber = Math.floor(Math.random() * 20) + 1;
   console.log("👉 Secret number (chut):", secretNumber);
@@ -47,7 +51,7 @@ const handleCheck = () => {
 
   if (currentScore === 0) {
     setMessage("💥 You lost the game!");
-    document.body.style.backgroundColor = "#d03d23ff";
+    setBackground("#d03d23ff");
     btnCheck.disabled = true;
     return;
   }
@@ -71,11 +75,11 @@ const updateWinState = (isWin) => {
   if (isWin) {
     setMessage("🎉 Correct Number!");
     numberBox.textContent = secretNumber;
-    document.body.style.backgroundColor = "#60b347";
+    setBackground("#60b347");
   } else {
     setMessage("Start guessing...");
     numberBox.textContent = "?";
-    document.body.style.backgroundColor = "#222";
+    setBackground("#222");
   }
 };
 
