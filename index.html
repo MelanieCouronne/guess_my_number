@@ -39,29 +39,23 @@
     </header>
 
     <main class="app__main">
-      <section class="panel panel--left">
-        <form id="guess-form">
-          <label for="guess-input" class="sr-only">Your Guess</label>
-          <input
-            id="guess-input"
-            type="number"
-            class="input--guess"
-            min="1"
-            max="20"
-            aria-label="Guess a number between 1 and 20"
-            autofocus
-          />
+      <form id="guess-form" class="panel panel--left">
+        <label for="guess-input" class="sr-only">Your Guess</label>
+        <input
+          id="guess-input"
+          type="number"
+          class="input--guess"
+          min="1"
+          max="20"
+          aria-label="Guess a number between 1 and 20"
+          autofocus
+        />
 
-          <button type="submit" class="btn btn--primary btn-check">
-            <img
-              src="./assets/images/check.png"
-              class="btn__icon"
-              alt="Check!"
-            />
-            Check!
-          </button>
-        </form>
-      </section>
+        <button type="submit" class="btn btn--primary btn-check">
+          <img src="./assets/images/check.png" class="btn__icon" alt="Check!" />
+          Check!
+        </button>
+      </form>
 
       <section class="panel panel--right">
         <p class="message" aria-live="polite">Start guessing...</p>
