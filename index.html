@@ -3,52 +3,121 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Guess My Number</title>
+    <title>Guess My Number!</title>
 
     <link
       href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap"
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./manifest.json" />
   </head>
 
-  <body class="app">
+  <body class="app page">
     <header class="app__header">
       <h1 class="app__title">Guess My Number!</h1>
       <p class="app__range">( Between 1 and 20 )</p>
-
-      <button class="btn btn--secondary app__btn-again" id="btn-again">
-        Again!
-      </button>
-
       <div class="number-box" data-value="?" aria-live="polite">?</div>
     </header>
 
     <main class="app__main">
       <section class="panel panel--left">
-        <label for="guess-input" class="sr-only">Your Guess</label>
-        <input
-          id="guess-input"
-          type="number"
-          class="input input--guess guess"
-          min="1"
-          max="20"
-          aria-label="Guess a number"
-        />
+        <form id="guess-form">
+          <label for="guess-input" class="sr-only">Your Guess</label>
+          <input
+            id="guess-input"
+            type="number"
+            class="input--guess"
+            min="1"
+            max="20"
+            aria-label="Guess a number between 1 and 20"
+            autofocus
+          />
 
-        <button class="btn btn--primary check">Check!</button>
+          <button type="submit" class="btn btn--primary btn-check">
+            <img
+              src="./assets/images/check.png"
+              class="btn__icon"
+              alt="Check!"
+            />
+            Check!
+          </button>
+        </form>
       </section>
 
       <section class="panel panel--right">
         <p class="message" aria-live="polite">Start guessing...</p>
 
-        <p class="stat">💯 Score: <span class="score">5</span></p>
+        <div class="scoreboard">
+          <div class="scoreboard__row">
+            <img
+              src="./assets/images/heart.png"
+              class="scoreboard__icon"
+              alt="Heart"
+            />
+            <span class="scoreboard__label">Lives:</span>
+            <span class="scoreboard__value lives">5</span>
+          </div>
 
-        <p class="stat">🥇 Highscore: <span class="highscore">0</span></p>
+          <div class="scoreboard__row">
+            <img
+              src="./assets/images/star.png"
+              class="scoreboard__icon"
+              alt="Star"
+            />
+            <span class="scoreboard__label">Highscore:</span>
+            <span class="scoreboard__value highscore">0</span>
+          </div>
+        </div>
       </section>
     </main>
 
-    <script src="script.js" type="module"></script>
+    <!-- Modal Game over -->
+    <div
+      class="modal"
+      id="game-over-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      inert
+    >
+      <div class="modal__overlay"></div>
+
+      <div class="modal__panel" role="document">
+        <p class="modal__title">TRY AGAIN?</p>
+
+        <div class="modal__options">
+          <button class="modal__option is-active" data-action="yes">
+            <span class="modal__cursor">▶</span>
+            Yes
+          </button>
+
+          <button class="modal__option" data-action="no">
+            <span class="modal__cursor">▶</span>
+            No
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/main.js" type="module"></script>
   </body>
 </html>
