@@ -99,3 +99,8 @@ Puis ouvrir : `http://localhost:8000`
 - structurer un projet sans framework
 - travailler les animations CSS rétro
 - garder le code lisible et maintenable
+
+## 📷 Visuel
+<img width="1512" height="827" alt="Guess-My-Number" src="https://github.com/user-attachments/assets/f15db3a1-8bef-42ca-a845-b4356a3426b1" />
+
+
