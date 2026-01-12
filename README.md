@@ -5,7 +5,7 @@
 
 # 🎮 Guess My Number — Retro Edition
 
-Petit jeu rétro développé en JavaScript vanilla, conçu comme un terrain d'expérimentation autour des fondamentaux du web : logique métier, manipulation du DOM, accessibilité, animations CSS et structuration du code sans framework.
+Jeu rétro développé en JavaScript vanilla, conçu autour des fondamentaux du web : logique métier, manipulation du DOM, accessibilité, animations CSS et structuration du code sans framework.
 
 ## ✨ Présentation
 
@@ -24,9 +24,9 @@ L'interface s'inspire de l'esthétique retro-gaming / pixel art, avec des animat
 
 Ce projet a été développé sans framework volontairement.
 
-L'idée est née d'une réflexion personnelle autour des performances et de la maîtrise des fondamentaux. Netflix a notamment fait le choix de re-coder entièrement sa plateforme en JavaScript vanilla pour des raisons de performance et de contrôle fin du rendu.
+L'idée est née d'une réflexion personnelle autour des performances et de la maîtrise des fondamentaux vs frameworks. ```Netflix``` a notamment fait le choix de re-coder entièrement sa plateforme en JavaScript vanilla pour des raisons de performance.
 
-Sans aucune comparaison, ce projet s'inscrit dans la même logique à une autre échelle : 👉 revenir aux bases pour mieux comprendre ce que font les frameworks.
+Sans aucune comparaison, ce projet s'inscrit dans une même logique : 👉 revenir aux bases pour mieux comprendre.
 
 C'est aussi une manière de réviser et consolider :
 
