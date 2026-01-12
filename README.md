@@ -3,50 +3,51 @@
 <br><br>
 
 
-# 🎮 Guess My Number — Vanilla JS Edition
+# 🎮 Guess My Number — Retro Edition
 
-Petit jeu rétro où il faut deviner un nombre entre 1 et 20.
-Simple en apparence, mais volontairement écrit en JavaScript vanilla, sans framework, sans build, sans dépendances.
+Petit jeu rétro développé en JavaScript vanilla, conçu comme un terrain d'expérimentation autour des fondamentaux du web : logique métier, manipulation du DOM, accessibilité, animations CSS et structuration du code sans framework.
 
-## 📑 Sommaire
+## ✨ Présentation
 
-- [✨ Pourquoi du JavaScript vanilla ?](#-pourquoi-du-javascript-vanilla-)
-- [🕹️ Règles du jeu](#️-règles-du-jeu)
-- [🧱 Stack](#-stack)
-- [📁 Architecture](#-architecture)
-- [🚀 Lancer le projet](#-lancer-le-projet)
-- [🧠 Objectifs personnels](#-objectifs-personnels)
+Le principe est simple : deviner un nombre compris entre 1 et 20 avec un nombre limité de tentatives.
 
-## ✨ Pourquoi du JavaScript vanilla ?
+Ce projet est volontairement sobre côté fonctionnalités, afin de mettre l'accent sur :
 
-J'ai lu récemment [un article sur Medium](https://blog.stackademic.com/why-netflix-shifted-part-of-its-frontend-from-react-to-vanilla-javascript-905cf9688498) qui explique pourquoi Netflix a migré une partie de son frontend de React vers du JavaScript vanilla, notamment pour améliorer les performances et réduire la complexité.
+- la qualité du code
+- l'expérience utilisateur
+- l'accessibilité
+- et la cohérence visuelle
 
-⚠️ **Évidemment, aucune comparaison possible entre Netflix et ce petit jeu.**
+L'interface s'inspire de l'esthétique retro-gaming / pixel art, avec des animations glitch et une ambiance volontairement minimaliste.
 
-Mais ça m'a rappelé une chose essentielle :
-👉 **maîtriser le JavaScript "pur" reste fondamental.**
+## 🧠 Pourquoi du JavaScript vanilla ?
 
-Ce projet est donc un exercice volontaire de révision et de structuration du JS, sans béquille.
+Ce projet a été développé sans framework volontairement.
 
-## 🕹️ Règles du jeu
+L'idée est née d'une réflexion personnelle autour des performances et de la maîtrise des fondamentaux. Netflix a notamment fait le choix de re-coder entièrement sa plateforme en JavaScript vanilla pour des raisons de performance et de contrôle fin du rendu.
 
-- Un nombre secret est généré entre **1 et 20**
-- Tu disposes de **5 essais**
-- À chaque tentative :
-  - ⬆️ Too high!
-  - ⬇️ Too low!
-- Trouve le bon nombre avant d'épuiser ton score
-- Le **highscore** est conservé pendant la session
+Sans aucune comparaison, ce projet s'inscrit dans la même logique à une autre échelle : 👉 revenir aux bases pour mieux comprendre ce que font les frameworks.
 
-## 🧱 Stack
+C'est aussi une manière de réviser et consolider :
 
-- **HTML5**
-- **CSS3** (style rétro / pixel-art)
-- **JavaScript Vanilla ES Modules**
+- la gestion du DOM
+- les événements
+- l'état de l'application
+- le focus et le clavier
+- les animations CSS
 
-Aucune dépendance externe.
-Aucun framework.
-Aucun build.
+## 🛠️ Stack technique
+
+- HTML5 sémantique
+- CSS3
+  - animations (steps, glitch, transitions)
+  - design pixel-art
+  - architecture BEM
+- JavaScript ES6+
+  - modules ES
+  - fonctions pures pour la logique métier
+  - séparation logique / UI
+- Aucune dépendance externe
 
 ## 📁 Architecture
 
@@ -59,46 +60,62 @@ GUESS_MY_NUMBER/
 │  ├─ index.js
 │  └─ variables.js
 ├─ js/
-│  ├─ bye.js
-│  ├─ game.js
-│  ├─ main.js
-│  ├─ modal.js
-│  ├─ transition.js
-│  ├─ ui.js
-│  └─ utils.js
+│  ├─ bye.js           → orchestration page "Bye"
+│  ├─ game.js          → logique métier
+│  ├─ main.js          → point d'entrée et orchestration
+│  ├─ modal.js         → gestion de la modale de fin de jeu
+│  ├─ transition.js    → transition entre les pages
+│  ├─ ui.js            → manipulation du DOM et affichage
+│  └─ utils.js         → logique réutilisable
 ├─ bye.html
 ├─ index.html
 └─ README.md
 ```
 
-**Organisation du code :**
+Cette organisation permet :
 
-- `game.js` → logique métier
-- `ui.js` → gestion du DOM
-- `main.js` → orchestration
-- séparation claire des responsabilités
+- une meilleure lisibilité
+- une séparation claire des responsabilités
+- une évolution possible sans refactor massif
 
+## ♿ Accessibilité
+
+Une attention particulière a été portée à l'accessibilité :
+
+- navigation clavier complète
+- gestion du focus (modale incluse)
+- utilisation de `aria-live` pour les messages dynamiques
+- usage de l'attribut `inert` pour éviter les pièges de focus
+- contrastes lisibles et tailles de texte adaptées
+
+## 🎬 Expérience utilisateur
+
+- feedback visuel immédiat (glitch, couleurs, animations)
+- gestion claire des erreurs
+- modale de fin de jeu accessible
+- page "Bye" dédiée pour une sortie volontaire du jeu
+- transitions douces entre les états et les pages
 
 ## 🚀 Lancer le projet
 
-Il suffit d'ouvrir `index.html` dans un navigateur moderne.
-**(Aucun serveur requis.)**
+Aucune installation requise.
 
-Ou via un serveur local :
-
-```bash
-# Avec Node.js (si npx est installé)
-npx serve
+```
+# ouvrir simplement index.html dans un navigateur
 ```
 
-Puis ouvrir : `http://localhost:8000`
+## 🎯 Objectifs du projet
 
-## 🧠 Objectifs personnels
+- Revoir les bases du JavaScript moderne
+- Travailler sans framework
+- Mettre en pratique l'accessibilité web
+- Construire une petite application cohérente de bout en bout
+- Explorer une direction artistique personnelle
 
-- revoir les bases du JS moderne
-- structurer un projet sans framework
-- travailler les animations CSS rétro
-- garder le code lisible et maintenable
+## 📝 À propos
+
+Ce projet fait partie de mon portfolio de développeuse web. Il ne cherche pas à démontrer une complexité technique excessive, mais plutôt une approche réfléchie, propre et maîtrisée du développement.
+
 
 ## 📷 Visuel
 <img width="1512" height="827" alt="Guess-My-Number" src="https://github.com/user-attachments/assets/f15db3a1-8bef-42ca-a845-b4356a3426b1" />
